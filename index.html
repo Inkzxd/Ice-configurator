@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Eis-Konfigurator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1>Eis-Konfigurator 🍦</h1>
+        <p>Stelle dir dein Lieblingseis zusammen und berechne den Preis.</p>
+
+        <!-- Kundendaten -->
+        <section class="card">
+            <h2>1. Kundendaten</h2>
+            <label for="customerName" class="field">
+                Name:
+                <input type="text" id="customerName" placeholder="z.B. Anna" />
+            </label>
+        </section>
+
+        <!-- Becher-Größe -->
+        <section class="card">
+            <h2>2. Becher-Größe</h2>
+            <div class="field">
+                <label>
+                    <input type="radio" name="size" value="small" />
+                    klein (2,00 €)
+                </label>
+            </div>
+            <div class="field">
+                <label>
+                    <input type="radio" name="size" value="medium" checked />
+                    mittel (3,00 €)
+                </label>
+            </div>
+            <div class="field">
+                <label>
+                    <input type="radio" name="size" value="large" />
+                    groß (4,00 €)
+                </label>
+            </div>
+        </section>
+
+        <!-- Toppings -->
+        <section class="card">
+            <h2>3. Toppings</h2>
+            <p class="hint">Wähle beliebig viele Toppings aus:</p>
+            <div class="field">
+                <label>
+                    <input type="checkbox" id="sprinkles" />
+                    Schokostreusel (+0,40 €)
+                </label>
+            </div>
+            <div class="field">
+                <label>
+                    <input type="checkbox" id="cookies" />
+                    Keksstücke (+0,60 €)
+                </label>
+            </div>
+            <div class="field">
+                <label>
+                    <input type="checkbox" id="strawberry" />
+                    Erdbeersoße (+0,50 €)
+                </label>
+            </div>
+            <div class="field">
+                <label>
+                    <input type="checkbox" id="cream" />
+                    Sahne (+0,30 €)
+                </label>
+            </div>
+        </section>
+
+        <!-- Rabattcode -->
+        <section class="card">
+            <h2>4. Rabattcode (optional)</h2>
+            <label for="discountCode" class="field">
+                Rabattcode:
+                <input type="text" id="discountCode" placeholder="z.B. STUDENT10" />
+            </label>
+            <p class="hint">
+                Verfügbare Codes: <code>STUDENT10</code> (−10%), <code>BIGEIS20</code> (−20%)
+            </p>
+        </section>
+
+        <!-- Ergebnis -->
+        <section class="card">
+            <button id="calculateBtn">Preis berechnen</button>
+            <div id="result" class="result-box">
+                <!-- Hier wird das Ergebnis angezeigt -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
