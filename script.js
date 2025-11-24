@@ -29,12 +29,12 @@ class IceOrder {
     }
 
     getBasePrice() {
-        //TODO: Return Base Preis zu passenden Size
+        //* Return Base Preis zu passenden Size
         return basePrices[this.size];
     }
 
     getToppingsPrice() {
-        //TODO: Summiere Toppings
+        //* Summiere Toppings
         let total = 0;
         for (const toppingId of this.selectedToppings) {
             const topping = toppings.find(t => t.id === toppingId);
@@ -46,7 +46,7 @@ class IceOrder {
     }
 
     getTotalPrice() {
-        //TODO: Gesamtpreis berechnen, Doscount-Funktion anwenden
+        //* Gesamtpreis berechnen, Doscount-Funktion anwenden
         const basePrice = this.getBasePrice();
         const toppingsPrice = this.getToppingsPrice();
         const totalPrice = basePrice + toppingsPrice;
@@ -70,7 +70,7 @@ class IceOrder {
 
 function getSelectedSize() {
     const sizeRadios = document.querySelectorAll('input[name="size"]');
-    //TODO: Ausgewählte Größe extrahieren und zurückgeben
+    //Ausgewählte Größe extrahieren und zurückgeben
     for (const radio of sizeRadios) {
         if (radio.checked) {
             return radio.value;
@@ -81,7 +81,7 @@ function getSelectedSize() {
 function getSelectedToppings() {
     const selected = [];
 
-   //TODO: Alle selektierten Toppings bzw deren ids in Array legen und zurückgeben
+   //* Alle selektierten Toppings bzw deren ids in Array legen und zurückgeben
     for (const topping of toppings) {
        const checkbox = document.querySelector(`#${topping.id}`);
        if (checkbox && checkbox.checked) {
@@ -95,7 +95,7 @@ function getSelectedToppings() {
 function createDiscountFunction(code) {
     // Innere Funktion erzeugt eine Rabattfunktion (Closure über percent)
     function makeDiscount(percent) {
-       //TODO: return Function (price)
+       //* return Function (price)
         return function (price) {
             return price * (1 - percent / 100);
         };
@@ -125,7 +125,7 @@ function createDiscountFunction(code) {
 const button = document.querySelector("#calculateBtn");
 const resultDiv = document.querySelector("#result");
 
-//TODO: Event Listener und IceOrder-Instanz sowie Ausgabe
+//* Event Listener und IceOrder-Instanz sowie Ausgabe
 button.addEventListener("click", function() {
     const size = getSelectedSize();
     const selectedToppings = getSelectedToppings();
